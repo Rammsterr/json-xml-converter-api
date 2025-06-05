@@ -1,0 +1,48 @@
+### 1. JSON till XML
+
+# Skickar JSON, får tillbaka XML
+POST http://localhost:8080/api/convert/json-to-xml
+Content-Type: application/json
+
+{
+  "name": "Kalle Karlsson",
+  "age": 28,
+  "city": "Uppsala"
+}
+
+###
+
+### 2. XML till JSON
+# Skickar XML, får tillbaka JSON
+POST http://localhost:8080/api/convert/xml-to-json
+Content-Type: application/xml
+
+<person>
+    <name>Lisa Lind</name>
+    <age>34</age>
+    <city>Örebro</city>
+</person>
+
+###
+
+### 3. Hämta JSON från extern URL → konvertera till XML
+
+POST http://localhost:8080/api/convert/fetch-json-to-xml
+Content-Type: application/json
+
+{
+  "url": "https://jsonplaceholder.typicode.com/users/1"
+}
+
+###
+
+### 4. Hämta XML från extern URL → konvertera till JSON
+
+POST http://localhost:8080/api/convert/fetch-xml-to-json
+Content-Type: application/json
+
+{
+  "url": "https://httpbin.org/xml"
+}
+
+###
